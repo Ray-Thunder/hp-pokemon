@@ -10,11 +10,13 @@
     <h1>Pokemon</h1>
     <div id="pokemon"></div>
     <script>
+      // fonction qui récupère le pokemon
       function fetchPokemon(pokemon) {
         return fetch('https://pokeapi.co/api/v2/pokemon/' + pokemon)
           .then((response) => response.json())
       }
 
+      // fonction qui affiche le pokemon
       async function displayPokemon(pokemon) {
         const data = await fetchPokemon(pokemon)
         document.querySelector('#pokemon').innerHTML = `
