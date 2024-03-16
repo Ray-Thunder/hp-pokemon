@@ -8,11 +8,13 @@
 <body>
     <div id="characters"></div>
     <script>
+        // fonction qui permet de recuperer tous les personnages de hp
         function fetchCharacters(){
             return fetch('https://hp-api.lainocs.fr/characters')
                 .then((response) => response.json())
         }
 
+        // fonction qui permet d'afficher les personnages
         async function displayCharacters() {
             const data = await fetchCharacters()
             data.forEach(character => {
