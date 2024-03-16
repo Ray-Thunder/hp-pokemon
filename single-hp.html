@@ -8,6 +8,7 @@
   <body>
     <div id="character"></div>
     <script>
+      // fonction qui recupere le personnage
       function fetchCharacter() {
         let url = window.location.search;
         let slug = new URLSearchParams(url).get("slug");
@@ -16,6 +17,7 @@
         );
       }
 
+      // fonction qui affiche le personnage
       async function displayCharacter() {
         const data = await fetchCharacter();
         document.querySelector("#character").innerHTML = `
